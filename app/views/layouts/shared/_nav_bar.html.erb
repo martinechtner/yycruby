@@ -1,0 +1,21 @@
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag('ruby_yyc.png', class: 'nav-bar-logo'), root_path %>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapsable">
+      <ul class="nav navbar-nav" id="menu">
+        <li class="<%= 'active' if controller.is_a?(HomeController) %>"><%= link_to 'Home', root_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" align="right">
+        <li><a href="/logout">Admin Log In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
