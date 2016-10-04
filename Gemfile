@@ -33,8 +33,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#Flexible authentication solution for Rails with Warden.
+# Flexible authentication solution for Rails with Warden.
 gem 'devise'
+
+# Meetup client to access the api
+gem 'meetup_client_rails', github: 'martinechtner/meetup_client_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

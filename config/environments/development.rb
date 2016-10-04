@@ -52,3 +52,5 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
+
+ENV['MEETUP_API_KEY'] = '76115723306e3a556c7e60281b613810'
