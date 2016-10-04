@@ -1,29 +1,38 @@
-<div class="row container">
-  <div class="col-md-6">
+<div class="row yycruby">
+  <div class="col-md-10 col-md-offset-1">
+    <%= render 'layouts/shared/page_heading',
+               { heading: 'YYC.rb',
+                 sub_heading: 'Calgary Ruby User Group',
+                 description: 'We meet once a month to code, do talks and meet others doing Ruby development in the Calgary area.' } %>
 
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Next Meetup</h3>
-      </div>
-      <div class="panel-body">
-        <h2><%= @next_meetup.name %></h2>
-        <h4><%= l convert_to_datetime(@next_meetup.time) %></h4>
-        <%= @next_meetup.description.html_safe %>
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Next Meetup</h3>
+          </div>
+          <div class="panel-body">
+            <h2><%= @next_meetup.name %></h2>
+            <h4><%= l convert_to_datetime(@next_meetup.time) %></h4>
+            <%= @next_meetup.description.html_safe %>
+          </div>
+        </div>
+
+        <div class="panel panel-warning past-meetups">
+          <div class="panel-heading">
+            <h3 class="panel-title">Past Meetups</h3>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <% @past_meetups.each do |meetup| %>
+                <li><%= l convert_to_date(meetup.time) %> >> <%= meetup.name %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="panel panel-warning past-meetups">
-      <div class="panel-heading">
-        <h3 class="panel-title">Past Meetups</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-          <% @past_meetups.each do |meetup| %>
-            <li><%= l convert_to_date(meetup.time) %> >> <%= meetup.name %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-
   </div>
 </div>
