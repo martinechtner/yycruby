@@ -1,0 +1,28 @@
+<%= render 'layouts/shared/page_header',
+           { heading: 'Archive',
+             sub_heading: 'A collection of all our past events.' } %>
+
+<div class="row">
+  <div class="col-md-6">
+    <h2>Past Meetups</h2>
+    <ul>
+      <% @past_meetups.each do |meetup| %>
+        <li><%= l convert_to_date(meetup.time) %> >> <%= meetup.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Next Meetup</h3>
+      </div>
+      <div class="panel-body">
+        <h2><%= @next_meetup.name %></h2>
+        <h4><%= l convert_to_datetime(@next_meetup.time) %></h4>
+        <%= @next_meetup.description.html_safe %>
+      </div>
+    </div>
+
+  </div>
+</div>
