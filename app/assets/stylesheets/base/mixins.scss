@@ -1,0 +1,47 @@
+@mixin placeholder($color) {
+  .form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: $color !important;
+  }
+  .form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $color !important;
+    opacity: 1;
+  }
+  .form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $color !important;
+    opacity: 1;
+  }
+  .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $color !important;
+  }
+}
+
+@mixin border-radius-top-right($radius) {
+  border-top-right-radius: $radius !important;
+  -moz-border-radius-topright: $radius !important;
+  -webkit-border-top-right-radius: $radius !important;
+}
+
+@mixin border-radius-bottom-right($radius) {
+  -moz-border-radius-bottomright: $radius !important;
+  -webkit-border-bottom-right-radius: $radius !important;
+  border-bottom-right-radius: $radius !important;
+}
+
+@mixin border-radius-top-left($radius) {
+  -moz-border-radius-topleft: $radius !important;
+  -webkit-border-top-left-radius: $radius !important;
+  border-top-left-radius: $radius !important;
+}
+
+@mixin border-radius-bottom-left($radius) {
+  -moz-border-radius-bottomleft: $radius !important;
+  -webkit-border-bottom-left-radius: $radius !important;
+  border-bottom-left-radius: $radius !important;
+}
+
+@mixin border-radius($radius) {
+  @include border-radius-bottom-left($radius);
+  @include border-radius-top-left($radius);
+  @include border-radius-bottom-right($radius);
+  @include border-radius-top-right($radius);
+}

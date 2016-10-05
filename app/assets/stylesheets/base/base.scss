@@ -32,4 +32,21 @@ body {
     list-style: none;
     padding: 0;
   }
+
+  .btn, .form-control {
+    @include border-radius($base-radius)
+  }
+
+  form {
+    .input-group > span.input-group-addon {
+      @include border-radius-top-left($base-radius);
+      @include border-radius-bottom-left($base-radius);
+      @include border-radius-top-right(0);
+      @include border-radius-bottom-right(0);
+    }
+  }
+
+  .alert {
+    z-index: 1200 !important;
+  }
 }

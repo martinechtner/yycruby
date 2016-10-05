@@ -39,6 +39,11 @@ gem 'devise'
 # Meetup client to access the api
 gem 'meetup_client_rails', github: 'martinechtner/meetup_client_rails'
 
+# Easy file attachment management for ActiveRecord
+gem 'paperclip', '~> 5.1'
+#Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup.
+gem 'simple_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

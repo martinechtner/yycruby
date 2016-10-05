@@ -1,37 +1,46 @@
-<%= form_for(sponsor) do |f| %>
+<%= simple_form_for sponsor do |f| %>
   <% if sponsor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(sponsor.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
 
       <ul>
-      <% sponsor.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% sponsor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :company %>
-    <%= f.text_field :company %>
+
+  <%= f.input :company %>
+
+  <%= f.input :description, as: :text %>
+
+  <%= f.input :url %>
+
+  <%= f.input :sponsoring, as: :text %>
+
+  <div class="row">
+    <div class="col-md-1 text-right">
+      <%= f.label :logo %>
+    </div>
+    <div class="col-md-5">
+      <div class="input-group">
+            <span class="input-group-btn">
+              <span class="btn btn-primary btn-file text-uppercase">
+                Upload a logo <%= f.input_field :logo, as: :file, label: false %>
+              </span>
+            </span>
+        <input type="text" class="form-control" placeholder="No file selected&hellip;" readonly>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <% if sponsor.logo %>
+        <%= image_tag sponsor.logo(:thumb), class: 'img-responsive' %>
+        Current Logo
+      <% end %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sponsoring %>
-    <%= f.text_area :sponsoring %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>

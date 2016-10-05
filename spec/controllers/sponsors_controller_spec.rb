@@ -3,12 +3,14 @@ RSpec.describe SponsorsController, type: :controller do
   let(:valid_attributes) { { company: Faker::Company::name,
                              url: Faker::Internet::url,
                              description: Faker::Lorem::paragraph,
-                             sponsoring: Faker::Lorem::paragraph } }
+                             sponsoring: Faker::Lorem::paragraph,
+                             logo: fixture_file_upload('photos/test.png', 'image/png') } }
 
   let(:invalid_attributes) { { company: '',
                                url: '',
                                description: '',
-                               sponsoring: '' } }
+                               sponsoring: '' ,
+                               logo: fixture_file_upload('photos/invalid_file.txt', 'text/plain') } }
 
   describe 'GET #index' do
     it 'assigns all sponsors as @sponsors' do
