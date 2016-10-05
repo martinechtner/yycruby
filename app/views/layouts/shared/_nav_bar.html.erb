@@ -12,6 +12,8 @@
     <div class="collapse navbar-collapse" id="navbar-collapsable">
       <ul class="nav navbar-nav" id="menu">
         <li class="<%= 'active' if controller.is_a?(HomeController) %>"><%= link_to 'Home', root_path %></li>
+        <li class="<%= 'active' if controller.is_a?(EventsController) %>"><%= link_to 'Past Meetups', events_path %></li>
+        <li><%= link_to 'Twitter', 'https://twitter.com/yyc_ruby', class: 'twitter-link' %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right" align="right">
         <li><a href="/logout">Admin Log In</a></li>

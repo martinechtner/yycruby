@@ -6,27 +6,14 @@
 <div class="row">
   <div class="col-md-6">
 
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Next Meetup</h3>
-      </div>
-      <div class="panel-body">
-        <h2><%= @next_meetup.name %></h2>
-        <h4><%= l convert_to_datetime(@next_meetup.time) %></h4>
-        <%= @next_meetup.description.html_safe %>
-      </div>
-    </div>
+    <%= render 'events/next_meetup' %>
 
     <div class="panel panel-warning past-meetups">
       <div class="panel-heading">
         <h3 class="panel-title">Past Meetups</h3>
       </div>
       <div class="panel-body">
-        <ul>
-          <% @past_meetups.each do |meetup| %>
-            <li><%= l convert_to_date(meetup.time) %> >> <%= meetup.name %></li>
-          <% end %>
-        </ul>
+        <%= render 'events/past_meetups' %>
       </div>
     </div>
 

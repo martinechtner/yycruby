@@ -1,6 +1,7 @@
 RSpec.describe EventsController, type: :controller do
 
-  let(:meetup) { MeetupClientRails::Model::Event.new({ 'name' => 'Meetup Topic',
+  let(:meetup) { MeetupClientRails::Model::Event.new({ 'id' => 'id_123',
+                                                       'name' => 'Meetup Topic',
                                                        'time' => Time.now,
                                                        'description' => Faker::Lorem::paragraph }) }
 
@@ -17,6 +18,19 @@ RSpec.describe EventsController, type: :controller do
       expect(assigns(:next_meetup)).to eq next_meetup
       expect(assigns(:past_meetups)).to eq past_meetups
       expect(response).to render_template(:index)
+    end
+  end
+
+  describe 'GET #show' do
+
+    before do
+      expect(MeetupClientRails::Events).to receive(:find).and_return(meetup)
+    end
+
+    it 'renders index' do
+      get :show, params: { id: 'id_123' }
+      expect(assigns(:meetup)).to eq meetup
+      expect(response).to render_template(:show)
     end
   end
 end
