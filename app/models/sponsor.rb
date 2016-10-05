@@ -3,7 +3,6 @@ class Sponsor < ApplicationRecord
 
   has_attached_file :logo,
                     source_file_options: { all: '-auto-orient' },
-                    styles: { original: '', thumb: '85x200#' },
-                    default_url: 'placeholders/user_avatar_placeholder.svg'
+                    styles: { original: '', thumb: '85x200#' }
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
 end

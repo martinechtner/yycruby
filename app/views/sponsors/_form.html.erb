@@ -21,7 +21,7 @@
   <%= f.input :sponsoring, as: :text %>
 
   <div class="row">
-    <div class="col-md-1 text-right">
+    <div class="col-md-1">
       <%= f.label :logo %>
     </div>
     <div class="col-md-5">
@@ -42,5 +42,5 @@
     </div>
   </div>
 
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.button :submit, class: 'btn btn-primary text-right' %>
 <% end %>
