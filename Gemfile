@@ -46,6 +46,8 @@ group :development, :test do
   gem 'faker', '~> 1.6'
   gem 'factory_girl_rails', '~> 4.5'
   gem 'rails-controller-testing'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'rspec-its', '~> 1.2'
 end
 
 group :development do
