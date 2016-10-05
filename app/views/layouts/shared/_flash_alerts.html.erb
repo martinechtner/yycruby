@@ -1,0 +1,7 @@
+<% content_for :scripts do %>
+  <script type="text/javascript" language="javascript">
+    <% flash.each do |type, message| %>
+      growlAlerts({ message: '<%= message %>', type: '<%= bootstrap_class_for type %>' });
+    <% end %>
+  </script>
+<% end %>

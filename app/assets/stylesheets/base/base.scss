@@ -12,8 +12,12 @@ body {
   }
 
   .twitter-link {
-    color: #28b1ef !important;
+    color: $twitter-blue !important;
   }
+}
+
+.alert {
+  z-index: 1200 !important;
 }
 
 .yycruby {
@@ -31,5 +35,49 @@ body {
   ul.past-meetups {
     list-style: none;
     padding: 0;
+  }
+
+  .btn, .form-control {
+    @include border-radius($base-radius);
+  }
+
+  .btn {
+    text-transform: uppercase;
+    float:right;
+  }
+
+  form {
+    padding: 0;
+    label {
+    }
+    .btn-file {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-file input[type=file] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      font-size: 100px;
+      text-align: right;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      outline: none;
+      background: white;
+      cursor: inherit;
+      display: block;
+    }
+    input[readonly] {
+      background-color: white !important;
+      cursor: text !important;
+    }
+    .input-group > span.input-group-addon {
+      @include border-radius-top-left($base-radius);
+      @include border-radius-bottom-left($base-radius);
+      @include border-radius-top-right(0);
+      @include border-radius-bottom-right(0);
+    }
   }
 }

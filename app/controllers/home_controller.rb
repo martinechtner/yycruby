@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @next_meetup = MeetupClientRails::Events.all('YYC-Rb').first
-    @past_meetups = MeetupClientRails::Events.all('YYC-Rb', status: 'past').reverse
+    @next_meetup = MeetupClientRails::Events.all(MEETUP_GROUP_SLUG).first
+    @past_meetups = MeetupClientRails::Events.all(MEETUP_GROUP_SLUG, status: 'past').reverse
   end
 end

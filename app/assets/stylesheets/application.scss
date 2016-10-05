@@ -14,5 +14,6 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "base/**/*";
+@import "animate";
+@import "base/index";
 @import "views/**/*";

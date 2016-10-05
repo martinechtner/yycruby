@@ -1,0 +1,20 @@
+<%= render 'layouts/shared/page_header',
+           { heading: 'Sponsors',
+             sub_heading: 'The companies helping us make it happen!' } %>
+
+    <% @sponsors.each do |sponsor| %>
+      <div class="well">
+        <%= link_to image_tag(sponsor.logo(:thumb)), sponsor.url %>
+        <h2>
+          <%= link_to sponsor.company, sponsor.url %>
+          <small><%= sponsor.sponsoring %></small>
+        </h2>
+
+        <p><%= sponsor.description %></p>
+
+        <%= link_to 'Edit', edit_sponsor_path(sponsor) %>
+        <%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+<%= link_to 'New Sponsor', new_sponsor_path %>
