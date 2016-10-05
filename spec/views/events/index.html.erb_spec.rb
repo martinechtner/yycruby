@@ -1,4 +1,4 @@
-RSpec.describe 'home/index', type: :view do
+RSpec.describe 'events/index', type: :view do
   let(:meetup) { MeetupClientRails::Model::Event.new({ 'id' => 'id_123',
                                                        'name' => 'Meetup Topic',
                                                        'time' => Time.now,

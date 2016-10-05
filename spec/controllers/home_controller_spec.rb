@@ -1,9 +1,10 @@
 RSpec.describe HomeController, type: :controller do
 
   describe 'GET #index' do
-    let(:meetup) { MeetupClientRails::Model::Event.new({ name: 'Next Meetup Topic',
-                                                         time: Time.now,
-                                                         description: Faker::Lorem::paragraph }) }
+    let(:meetup) { MeetupClientRails::Model::Event.new({ 'id' => 'id_123',
+                                                         'name' => 'Meetup Topic',
+                                                         'time' => Time.now,
+                                                         'description' => Faker::Lorem::paragraph }) }
     let(:next_meetup) { meetup }
     let(:past_meetups) { [meetup, meetup, meetup] }
 

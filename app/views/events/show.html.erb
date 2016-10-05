@@ -1,0 +1,9 @@
+<%= render 'layouts/shared/page_header',
+           { heading: @meetup.name,
+             sub_heading: l(convert_to_date(@meetup.time)) } %>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= @meetup.description.html_safe %>
+  </div>
+</div>
