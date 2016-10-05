@@ -39,10 +39,10 @@ body {
 
   .btn, .form-control {
     @include border-radius($base-radius);
-    text-transform: uppercase;
   }
 
   .btn {
+    text-transform: uppercase;
     float:right;
   }
 

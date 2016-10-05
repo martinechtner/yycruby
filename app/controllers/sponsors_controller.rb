@@ -1,11 +1,8 @@
 class SponsorsController < ApplicationController
-  before_action :set_sponsor, only: [:show, :edit, :update, :destroy]
+  before_action :set_sponsor, only: [:edit, :update, :destroy]
 
   def index
     @sponsors = Sponsor.all
-  end
-
-  def show
   end
 
   def new
@@ -20,7 +17,7 @@ class SponsorsController < ApplicationController
 
     respond_to do |format|
       if @sponsor.save
-        format.html { redirect_to @sponsor, notice: 'Sponsor was successfully created.' }
+        format.html { redirect_to sponsors_url, notice: 'Sponsor was successfully created.' }
         format.json { render :show, status: :created, location: @sponsor }
       else
         format.html { render :new }
@@ -32,7 +29,7 @@ class SponsorsController < ApplicationController
   def update
     respond_to do |format|
       if @sponsor.update(sponsor_params)
-        format.html { redirect_to @sponsor, notice: 'Sponsor was successfully updated.' }
+        format.html { redirect_to sponsors_url, notice: 'Sponsor was successfully updated.' }
         format.json { render :show, status: :ok, location: @sponsor }
       else
         format.html { render :edit }

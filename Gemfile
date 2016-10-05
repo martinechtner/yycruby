@@ -43,6 +43,8 @@ gem 'meetup_client_rails', github: 'martinechtner/meetup_client_rails'
 gem 'paperclip', '~> 5.1'
 #Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup.
 gem 'simple_form'
+# growl notifications
+gem 'bootstrap-growl-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

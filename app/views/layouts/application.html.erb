@@ -9,11 +9,16 @@
   </head>
 
   <body>
+    <%= render 'layouts/shared/flash_alerts', flash: flash %>
+
     <%= render 'layouts/shared/nav_bar' %>
+
     <div class="row yycruby">
       <div class="col-md-10 col-md-offset-1">
         <%= yield %>
       </div>
     </div>
+
+    <%= yield :scripts %>
   </body>
 </html>

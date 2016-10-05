@@ -20,14 +20,6 @@ RSpec.describe SponsorsController, type: :controller do
     end
   end
 
-  describe 'GET #show' do
-    it 'assigns the requested sponsor as @sponsor' do
-      sponsor = create(:sponsor, valid_attributes)
-      get :show, params: { id: sponsor.to_param }
-      expect(assigns(:sponsor)).to eq(sponsor)
-    end
-  end
-
   describe 'GET #new' do
     it 'assigns a new sponsor as @sponsor' do
       get :new, params: {}
@@ -59,7 +51,7 @@ RSpec.describe SponsorsController, type: :controller do
 
       it 'redirects to the created sponsor' do
         post :create, params: { sponsor: valid_attributes }
-        expect(response).to redirect_to(Sponsor.last)
+        expect(response).to redirect_to sponsors_url
       end
     end
 
@@ -102,7 +94,7 @@ RSpec.describe SponsorsController, type: :controller do
       it 'redirects to the sponsor' do
         sponsor = create(:sponsor, valid_attributes)
         put :update, params: { id: sponsor.to_param, sponsor: valid_attributes }
-        expect(response).to redirect_to(sponsor)
+        expect(response).to redirect_to sponsors_url
       end
     end
 
