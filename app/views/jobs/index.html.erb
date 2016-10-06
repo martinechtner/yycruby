@@ -1,0 +1,31 @@
+<%= render 'layouts/shared/page_header',
+           { heading: 'Job Board',
+             sub_heading: 'Ruby/Rails opportunities in Calgary',
+             description: 'Alphabetical Order (keeping it civil)' } %>
+
+<% @jobs.each do |job| %>
+  <div class="well">
+    <%= link_to image_tag(job.logo(:thumb)), job.company_career_url %>
+    <h2>
+      <%= link_to job.company, job.company_career_url %>
+      <small><%= job.title %></small>
+    </h2>
+
+    <p><%= job.description %></p>
+
+    <%= link_to 'Check out the job posting here', job.posting_url %>
+
+    <%= link_to 'Edit', edit_job_path(job) %>
+    <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+
+  <hr/>
+<% end %>
+
+<h2>
+  Please note, while we stive to keep this list current, it’s possible that some of these roles have been filled.
+  Good Luck!
+</h2>
+
+
+<%= link_to 'New Job', new_job_path %>
