@@ -14,7 +14,8 @@
         <li class="<%= 'active' if controller.is_a?(HomeController) %>"><%= link_to 'Home', root_path %></li>
         <li class="<%= 'active' if controller.is_a?(EventsController) %>"><%= link_to 'Past Meetups', events_path %></li>
         <li class="<%= 'active' if controller.is_a?(SponsorsController) %>"><%= link_to 'Sponsors', sponsors_path %></li>
-        <li class="<%= 'active' if controller.is_a?(JobsController) %>"><%= link_to 'Jobs', jobs_path %></li>
+        <li class="<%= 'active' if controller.is_a?(LocationsController) %>"><%= link_to 'Location', locations_url %></li>
+        <li class="<%= 'active' if controller.is_a?(JobsController) %>"><%= link_to 'Job Board', jobs_path %></li>
         <li><%= link_to 'Meetup Group', "http://www.meetup.com/#{ApplicationController::MEETUP_GROUP_SLUG}" %></li>
         <li><%= link_to 'Twitter', 'https://twitter.com/yyc_ruby', class: 'twitter-link' %></li>
       </ul>

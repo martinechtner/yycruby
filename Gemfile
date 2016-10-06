@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # Meetup client to access the api
-gem 'meetup_client_rails', github: 'martinechtner/meetup_client_rails'
+gem 'meetup_client_rails', git: 'https://github.com/martinechtner/meetup_client_rails'
 
 # Easy file attachment management for ActiveRecord
 gem 'paperclip', '~> 5.1'
@@ -47,6 +47,10 @@ gem 'simple_form'
 gem 'bootstrap-growl-rails'
 # allow ordering of lists
 gem 'acts_as_list'
+# for google maps
+gem 'gmaps4rails'
+# needed for gmaps
+gem 'underscore-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
