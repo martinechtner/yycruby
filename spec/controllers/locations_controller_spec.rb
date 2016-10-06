@@ -1,4 +1,4 @@
-RSpec.describe HomeController, type: :controller do
+RSpec.describe LocationsController, type: :controller do
 
   describe 'GET #index' do
     let(:meetup) { MeetupClientRails::Model::Event.new({ 'id' => 'id_123',
@@ -17,17 +17,16 @@ RSpec.describe HomeController, type: :controller do
                                                                       'zip' => '',
                                                                       'state' => 'AB' }, }) }
     let(:next_meetup) { meetup }
-    let(:past_meetups) { [meetup, meetup, meetup] }
 
     before do
-      expect(MeetupClientRails::Events).to receive(:all).and_return([next_meetup], past_meetups)
+      expect(MeetupClientRails::Events).to receive(:all).and_return([next_meetup])
     end
 
     it 'renders index' do
       get :index
       expect(assigns(:next_meetup)).to eq next_meetup
-      expect(assigns(:past_meetups)).to eq past_meetups
       expect(response).to render_template(:index)
+      expect(response).to have_http_status(:success)
     end
   end
 end

@@ -1,4 +1,4 @@
-RSpec.describe 'home/index', type: :view do
+RSpec.describe 'locations/index.html.erb', type: :view do
   let(:meetup) { MeetupClientRails::Model::Event.new({ 'id' => 'id_123',
                                                        'name' => 'Meetup Topic',
                                                        'time' => Time.now,
@@ -16,7 +16,6 @@ RSpec.describe 'home/index', type: :view do
                                                                     'state' => 'AB' }, }) }
   before(:each) do
     assign(:next_meetup, meetup)
-    assign(:past_meetups, [meetup, meetup])
   end
 
   subject { render }

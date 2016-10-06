@@ -1,0 +1,30 @@
+<%= render 'layouts/shared/map_libraries' %>
+
+<div class="panel panel-warning past-meetups">
+  <div class="panel-heading">
+    <h3 class="panel-title">Location</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= @next_meetup.venue['name'] %> <br/>
+        <%= @next_meetup.venue['address_1'] %> <br/>
+        <%= [@next_meetup.venue['city'], @next_meetup.venue['state'], @next_meetup.venue['localized_country_name']].join(', ') %>
+      </div>
+    </div>
+    <div id="map" style="height: 400px;"></div>
+  </div>
+</div>
+
+<% content_for :scripts do %>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+      handler = Gmaps.build('Google');
+      handler.buildMap({provider: {maxZoom: 18}, internal: {id: 'map'}}, function () {
+        markers = handler.addMarkers(<%=raw @map_hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    });
+  </script>
+<% end %>
