@@ -1,7 +1,6 @@
-class Sponsor < ApplicationRecord
-  acts_as_list
+class Job < ApplicationRecord
 
-  validates_presence_of :company, :url, :description, :sponsoring, :logo
+  validates_presence_of :company, :company_career_url, :posting_url, :description, :title, :logo
 
   has_attached_file :logo,
                     source_file_options: { all: '-auto-orient' },
