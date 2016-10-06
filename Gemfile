@@ -45,6 +45,8 @@ gem 'paperclip', '~> 5.1'
 gem 'simple_form'
 # growl notifications
 gem 'bootstrap-growl-rails'
+# allow ordering of lists
+gem 'acts_as_list'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

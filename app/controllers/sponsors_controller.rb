@@ -2,7 +2,7 @@ class SponsorsController < ApplicationController
   before_action :set_sponsor, only: [:edit, :update, :destroy]
 
   def index
-    @sponsors = Sponsor.all
+    @sponsors = Sponsor.all.order(position: :asc)
   end
 
   def new
@@ -52,6 +52,6 @@ class SponsorsController < ApplicationController
     end
 
     def sponsor_params
-      params.require(:sponsor).permit(:company, :description, :url, :sponsoring, :logo)
+      params.require(:sponsor).permit(:company, :description, :url, :sponsoring, :logo, :position)
     end
 end

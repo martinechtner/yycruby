@@ -4,7 +4,8 @@ RSpec.describe SponsorsController, type: :controller do
                              url: Faker::Internet::url,
                              description: Faker::Lorem::paragraph,
                              sponsoring: Faker::Lorem::paragraph,
-                             logo: fixture_file_upload('photos/test.png', 'image/png') } }
+                             logo: fixture_file_upload('photos/test.png', 'image/png'),
+                             position: 3} }
 
   let(:invalid_attributes) { { company: '',
                                url: '',
