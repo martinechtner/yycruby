@@ -5,13 +5,13 @@
   <%= f.input :url, placeholder: 'Company URL...' %>
   <%= f.input :description, as: :text, placeholder: 'About the company...' %>
   <%= f.input :sponsoring, as: :text, placeholder: 'What do they provide?' %>
-  <%= f.input :position %>
+  <%= f.input :position, hint: 'Sets the position ' %>
 
   <div class="row">
-    <div class="col-md-1">
+    <div class="col-md-2">
       <%= f.label :logo %>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
       <div class="input-group">
             <span class="input-group-btn">
               <span class="btn btn-primary btn-file text-uppercase">
@@ -21,7 +21,7 @@
         <input type="text" class="form-control" placeholder="No file selected&hellip;" readonly>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <% if sponsor.logo %>
         <%= image_tag sponsor.logo(:thumb), class: 'img-responsive' %>
         Current Logo

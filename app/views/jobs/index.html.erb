@@ -20,8 +20,12 @@
     <%= link_to 'Check out the job posting here', job.posting_url %>
 
     <% if user_signed_in? %>
-      <%= link_to 'Edit', edit_job_path(job) %>
-      <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= link_to 'Edit', edit_job_path(job) %> |
+          <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
     <% end %>
   </div>
 
@@ -29,7 +33,7 @@
 <% end %>
 
 <h2>
-  Please note, while we stive to keep this list current, it’s possible that some of these roles have been filled.
+  Please note, while we strive to keep this list current, it’s possible that some of these roles have been filled.
   Good Luck!
 </h2>
 
