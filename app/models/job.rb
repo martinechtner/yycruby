@@ -7,4 +7,13 @@ class Job < ApplicationRecord
                     styles: { original: '', thumb: '200x85' }
 
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
+
+  before_save :format_urls
+
+  private
+
+  def format_urls
+    self.posting_url = "http://#{self.posting_url}" unless self.posting_url[/^https?/]
+    self.company_career_url = "http://#{self.company_career_url}" unless self.company_career_url[/^https?/]
+  end
 end
