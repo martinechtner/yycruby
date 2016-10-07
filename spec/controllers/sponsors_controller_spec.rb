@@ -124,7 +124,7 @@ RSpec.describe SponsorsController, type: :controller do
 
   describe 'DELETE #destroy' do
     before(:each) { sign_in create(:user) }
-    
+
     it 'destroys the requested sponsor' do
       sponsor = create(:sponsor, valid_attributes)
       expect {
