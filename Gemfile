@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # Meetup client to access the api
-gem 'meetup_client_rails', git: 'https://github.com/martinechtner/meetup_client_rails'
+gem 'meetup_client_rails', '~> 0.1'
 
 # Easy file attachment management for ActiveRecord
 gem 'paperclip', '~> 5.1'
