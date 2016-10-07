@@ -8,4 +8,12 @@ class Sponsor < ApplicationRecord
                     styles: { original: '', thumb: '200x85' }
 
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
+
+  before_save :format_url
+
+  private
+
+  def format_url
+    self.url = "http://#{self.url}" unless self.url[/^https?/]
+  end
 end
