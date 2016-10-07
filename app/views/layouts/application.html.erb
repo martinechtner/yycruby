@@ -17,11 +17,11 @@
       <div class="row yycruby">
         <div class="col-md-12">
           <%= yield %>
+          <%= render 'layouts/shared/footer' %>
         </div>
       </div>
     </div>
 
-    <%= render 'layouts/shared/footer' %>
 
     <%= yield :scripts %>
   </body>
