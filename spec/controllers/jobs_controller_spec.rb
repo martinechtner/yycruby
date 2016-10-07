@@ -23,6 +23,8 @@ RSpec.describe JobsController, type: :controller do
   end
 
   describe 'GET #new' do
+    before(:each) { sign_in create(:user) }
+
     it 'assigns a new job as @job' do
       get :new, params: {}
       expect(assigns(:job)).to be_a_new(Job)
@@ -30,6 +32,8 @@ RSpec.describe JobsController, type: :controller do
   end
 
   describe 'GET #edit' do
+    before(:each) { sign_in create(:user) }
+
     it 'assigns the requested job as @job' do
       job = create(:job, valid_attributes)
       get :edit, params: { id: job.to_param }
@@ -38,6 +42,8 @@ RSpec.describe JobsController, type: :controller do
   end
 
   describe 'POST #create' do
+    before(:each) { sign_in create(:user) }
+
     context 'with valid params' do
       it 'creates a new Job' do
         expect {
@@ -71,6 +77,8 @@ RSpec.describe JobsController, type: :controller do
   end
 
   describe 'PUT #update' do
+    before(:each) { sign_in create(:user) }
+
     context 'with valid params' do
       let(:new_attributes) { { company: Faker::Company::name,
                                company_career_url: Faker::Internet::url,
@@ -118,6 +126,8 @@ RSpec.describe JobsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
+    before(:each) { sign_in create(:user) }
+
     it 'destroys the requested job' do
       job = create(:job, valid_attributes)
       expect {

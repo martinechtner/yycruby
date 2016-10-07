@@ -1,4 +1,5 @@
 class SponsorsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_sponsor, only: [:edit, :update, :destroy]
 
   def index
