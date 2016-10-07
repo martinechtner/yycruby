@@ -22,6 +22,8 @@ RSpec.describe SponsorsController, type: :controller do
   end
 
   describe 'GET #new' do
+    before(:each) { sign_in create(:user) }
+
     it 'assigns a new sponsor as @sponsor' do
       get :new, params: {}
       expect(assigns(:sponsor)).to be_a_new(Sponsor)
@@ -29,6 +31,8 @@ RSpec.describe SponsorsController, type: :controller do
   end
 
   describe 'GET #edit' do
+    before(:each) { sign_in create(:user) }
+
     it 'assigns the requested sponsor as @sponsor' do
       sponsor = create(:sponsor, valid_attributes)
       get :edit, params: { id: sponsor.to_param }
@@ -37,6 +41,8 @@ RSpec.describe SponsorsController, type: :controller do
   end
 
   describe 'POST #create' do
+    before(:each) { sign_in create(:user) }
+
     context 'with valid params' do
       it 'creates a new Sponsor' do
         expect {
@@ -70,6 +76,8 @@ RSpec.describe SponsorsController, type: :controller do
   end
 
   describe 'PUT #update' do
+    before(:each) { sign_in create(:user) }
+
     context 'with valid params' do
       let(:new_attributes) { { company: Faker::Company::name,
                                url: Faker::Internet::url,
@@ -115,6 +123,8 @@ RSpec.describe SponsorsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
+    before(:each) { sign_in create(:user) }
+    
     it 'destroys the requested sponsor' do
       sponsor = create(:sponsor, valid_attributes)
       expect {
