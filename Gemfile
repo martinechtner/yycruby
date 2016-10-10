@@ -51,6 +51,8 @@ gem 'acts_as_list'
 gem 'gmaps4rails'
 # needed for gmaps
 gem 'underscore-rails'
+# font awesome
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
