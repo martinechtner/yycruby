@@ -16,6 +16,9 @@
         <li class="<%= 'active' if controller.is_a?(SponsorsController) %>"><%= link_to 'Sponsors', sponsors_path %></li>
         <li class="<%= 'active' if controller.is_a?(LocationsController) %>"><%= link_to 'Location', locations_url %></li>
         <li class="<%= 'active' if controller.is_a?(JobsController) %>"><%= link_to 'Job Board', jobs_path %></li>
+        <% if user_signed_in? %>
+          <li class="<%= 'active' if controller.is_a?(NewsController) %>"><%= link_to 'Announcements', news_index_path %></li>
+        <% end %>
         <li><%= link_to 'Meetup Group', "http://www.meetup.com/#{ApplicationController::MEETUP_GROUP_SLUG}" %></li>
         <li><%= link_to 'Twitter', 'https://twitter.com/yyc_ruby', class: 'twitter-link' %></li>
       </ul>

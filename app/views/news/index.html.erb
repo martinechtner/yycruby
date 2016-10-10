@@ -1,0 +1,16 @@
+<%= link_to 'New News', new_news_path %>
+
+<h1>Past Announcements</h1>
+
+<% @news.each do |news| %>
+  <div class="well">
+    <h2><%= l news.created_at %></h2>
+
+    <h4>Content:</h4>
+
+    <p><%= news.content %></p>
+
+    <%= link_to 'Edit', edit_news_path(news) %> |
+    <%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
