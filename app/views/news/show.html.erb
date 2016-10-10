@@ -1,0 +1,9 @@
+<p><%= @news ? @news.content.html_safe : 'No announcements.' %></p>
+
+<% if user_signed_in? %>
+  <% if @news %>
+    <%= link_to 'Edit', edit_news_path(@news) %> |
+  <% end %>
+
+  <%= link_to 'New Announcement', new_news_path %>
+<% end %>

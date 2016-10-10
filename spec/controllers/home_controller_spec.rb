@@ -18,6 +18,7 @@ RSpec.describe HomeController, type: :controller do
                                                                       'state' => 'AB' }, }) }
     let(:next_meetup) { meetup }
     let(:past_meetups) { [meetup, meetup, meetup] }
+    let!(:news) { create(:news)}
 
     before do
       expect(MeetupClientRails::Events).to receive(:all).and_return([next_meetup], past_meetups)
@@ -27,6 +28,7 @@ RSpec.describe HomeController, type: :controller do
       get :index
       expect(assigns(:next_meetup)).to eq next_meetup
       expect(assigns(:past_meetups)).to eq past_meetups
+      expect(assigns(:news)).to eq news
       expect(response).to render_template(:index)
     end
   end
