@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/martinechtner/yycruby.svg)](https://travis-ci.org/martinechtner/yycruby)
+[![Build Status](https://travis-ci.org/yycruby/yycruby.svg)](https://travis-ci.org/yycruby/yycruby)
 
 # yycruby
 
