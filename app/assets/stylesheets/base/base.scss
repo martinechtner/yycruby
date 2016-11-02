@@ -86,4 +86,15 @@ footer {
   padding: 50px;
   margin-top: 50px;
   border-top: 1px solid $light-grey;
+
+  .sponsor {
+    padding-top: 30px;
+    font-size: 1rem;
+  }
+
+  .pixeltree_logo {
+    padding-left: 20px;
+    display: inline-block;
+    max-height: 35px;
+  }
 }
