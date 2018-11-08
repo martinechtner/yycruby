@@ -1,0 +1,1 @@
+MEETUP_GROUP_SLUG = 'YYC-Rb'
