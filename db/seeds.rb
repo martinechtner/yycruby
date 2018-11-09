@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+[{ first_name: 'Test', last_name: 'User', email: 'test@example.com', password: 'password' }].each do |user_detail|
+  User.where(email: user_detail[:email]).first_or_create do |user|
+    user.first_name = user_detail[:first_name]
+    user.last_name = user_detail[:last_name]
+    user.email = user_detail[:email]
+    user.password = user_detail[:password]
+    user.password_confirmation = user_detail[:password]
+  end
+end

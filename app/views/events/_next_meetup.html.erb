@@ -3,8 +3,12 @@
     <h3 class="panel-title">Next Meetup</h3>
   </div>
   <div class="panel-body">
-    <h2><%= @next_meetup.name %></h2>
-    <h4><%= l convert_to_datetime(@next_meetup.time) %></h4>
-    <%= @next_meetup.description.html_safe %>
+    <% if @next_meetup.present? %>
+      <h2><%= @next_meetup.name %></h2>
+      <h4><%= l convert_to_datetime(@next_meetup.time) %></h4>
+      <%= @next_meetup.description.html_safe %>
+    <% else %>
+      <h2>No upcoming meetup.</h2>
+    <% end %>
   </div>
 </div>

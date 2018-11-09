@@ -7,9 +7,13 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-xs-12">
-        <%= @next_meetup.venue['name'] %> <br/>
-        <%= @next_meetup.venue['address_1'] %> <br/>
-        <%= [@next_meetup.venue['city'], @next_meetup.venue['state'], @next_meetup.venue['localized_country_name']].join(', ') %>
+        <% if @next_meetup.present? %>
+          <%= @next_meetup.venue['name'] %> <br/>
+          <%= @next_meetup.venue['address_1'] %> <br/>
+          <%= [@next_meetup.venue['city'], @next_meetup.venue['state'], @next_meetup.venue['localized_country_name']].join(', ') %>
+        <% else %>
+          No upcoming meetup.
+        <% end %>
       </div>
     </div>
 
@@ -21,7 +25,10 @@
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function () {
       handler = Gmaps.build('Google');
-      handler.buildMap({provider: {maxZoom: 18}, internal: {id: 'map'}}, function () {
+      handler.buildMap({
+        provider: {maxZoom: 18},
+        internal: {id: 'map'}
+      }, function () {
         markers = handler.addMarkers(<%=raw @map_hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
