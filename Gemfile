@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 # Flexible authentication solution for Rails with Warden.
-gem 'devise'
+gem 'devise', '~> 4.5'
 
 # Meetup client to access the api
 gem 'meetup_client_rails', '~> 0.1'
