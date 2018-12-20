@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1'
+gem 'rails', '~> 5.2'
 # Use Postgres as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Sass framework
@@ -50,7 +50,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
   gem 'faker', '~> 1.6'
-  gem 'factory_girl_rails', '~> 4.5'
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rspec-its', '~> 1.2'
