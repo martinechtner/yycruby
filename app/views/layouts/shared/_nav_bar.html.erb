@@ -1,41 +1,53 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsable">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to image_tag('ruby_yyc.png', class: 'nav-bar-logo'), root_path %>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-collapsable">
-      <ul class="nav navbar-nav" id="menu">
-        <li class="<%= 'active' if controller.is_a?(HomeController) %>"><%= link_to 'Home', root_path %></li>
-        <li class="<%= 'active' if controller.is_a?(EventsController) %>"><%= link_to 'Past Meetups', events_path %></li>
-        <li class="<%= 'active' if controller.is_a?(SponsorsController) %>"><%= link_to 'Sponsors', sponsors_path %></li>
-        <li class="<%= 'active' if controller.is_a?(LocationsController) %>"><%= link_to 'Location', locations_url %></li>
-        <li class="<%= 'active' if controller.is_a?(JobsController) %>"><%= link_to 'Job Board', jobs_path %></li>
-        <% if user_signed_in? %>
-          <li class="<%= 'active' if controller.is_a?(NewsController) %>"><%= link_to 'Announcements', news_index_path %></li>
-        <% end %>
-        <li><%= link_to 'Meetup Group', "http://www.meetup.com/#{MEETUP_GROUP_SLUG}" %></li>
-        <li><%= link_to 'Twitter', 'https://twitter.com/yyc_ruby', class: 'twitter-link' %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right" align="right">
-          <% if user_signed_in? %>
-            <li class="<%= 'active' if controller.is_a?(Devise::RegistrationsController) %>">
-              <%= link_to fa_icon('cog') + ' Edit Profile', edit_user_registration_path %>
-            </li>
-          <% end %>
-        <li>
-          <% if user_signed_in? %>
-            <%= link_to fa_icon('sign-out') + ' Log Out', destroy_user_session_path, method: :delete %>
-          <% else %>
-            <%= link_to fa_icon('sign-in') + ' Log In', new_user_session_path %>
-          <% end %>
+<nav class="navbar navbar-light bg-light navbar-expand-md" role="navigation">
+  <%= link_to image_tag('ruby_yyc.png', class: 'navbar-brand nav-bar-logo'), root_path %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item <%= 'active' if controller.is_a?(HomeController) %>">
+        <%= link_to 'Home', root_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item <%= 'active' if controller.is_a?(EventsController) %>">
+        <%= link_to 'Past Meetups', events_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item <%= 'active' if controller.is_a?(SponsorsController) %>">
+        <%= link_to 'Sponsors', sponsors_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item <%= 'active' if controller.is_a?(LocationsController) %>">
+        <%= link_to 'Location', locations_url, class: 'nav-link' %>
+      </li>
+      <li class="nav-item <%= 'active' if controller.is_a?(JobsController) %>">
+        <%= link_to 'Job Board', jobs_path, class: 'nav-link' %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item <%= 'active' if controller.is_a?(NewsController) %>">
+          <%= link_to 'Announcements', news_index_path, class: 'nav-link' %>
         </li>
-      </ul>
-    </div>
+      <% end %>
+      <li class="nav-item">
+        <%= link_to 'Meetup Group', "http://www.meetup.com/#{MEETUP_GROUP_SLUG}", class: 'nav-link', target: :_blank %>
+      </li>
+      <li class="nav-item">
+        <%= link_to(fa_icon('twitter', text: 'Twitter'), 'https://twitter.com/yyc_ruby', class: 'nav-link twitter-link', target: :_blank) %>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item <%= 'active' if controller.is_a?(Devise::RegistrationsController) %>">
+          <%= link_to fa_icon('cog') + ' Edit Profile', edit_user_registration_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+      <li class="nav-item">
+        <% if user_signed_in? %>
+          <%= link_to fa_icon('sign-out') + ' Log Out', destroy_user_session_path, class: 'nav-link', method: :delete %>
+        <% else %>
+          <%= link_to fa_icon('sign-in') + ' Log In', new_user_session_path, class: 'nav-link' %>
+        <% end %>
+      </li>
+    </ul>
   </div>
 </nav>

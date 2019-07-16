@@ -5,10 +5,11 @@ body {
 }
 
 .navbar {
+  border-bottom: 1px solid #e7e7e7;
+
   img.nav-bar-logo {
-    height: 28px;
+    height: 35px;
     width: 46px;
-    margin: 10px 10px 10px 0;
   }
 
   .twitter-link {
@@ -22,6 +23,8 @@ body {
 
 .yycruby {
   .page-heading {
+    margin-top: 10px;
+
     h1 {
       margin-top: 0;
     }
@@ -32,8 +35,13 @@ body {
     }
   }
 
+  .card {
+    margin-bottom: 20px;
+  }
+
   ul.past-meetups {
     list-style: none;
+    font-size: smaller;
     padding: 0;
   }
 
@@ -89,7 +97,7 @@ footer {
 
   .sponsor {
     padding-top: 30px;
-    font-size: 1rem;
+    font-size: .5rem;
   }
 
   .pixeltree_logo {

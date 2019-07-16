@@ -1,12 +1,12 @@
 <%= render 'layouts/shared/map_libraries' %>
 
-<div class="panel panel-warning past-meetups">
-  <div class="panel-heading">
-    <h3 class="panel-title">Location</h3>
+<div class="card border border-dark text-white past-meetups">
+  <div class="card-header bg-dark text-white">
+    Location
   </div>
-  <div class="panel-body">
+  <div class="card-body">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-12">
         <% if @next_meetup.present? %>
           <%= @next_meetup.venue['name'] %> <br/>
           <%= @next_meetup.venue['address_1'] %> <br/>

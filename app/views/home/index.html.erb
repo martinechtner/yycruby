@@ -6,22 +6,22 @@
 <div class="row">
   <div class="col-md-6">
 
-      <div class="panel panel-warning past-meetups">
-        <div class="panel-heading">
-          <h3 class="panel-title">Announcements</h3>
+      <div class="card border border-dark past-meetups">
+        <div class="card-header bg-dark text-white">
+          Announcements
         </div>
-        <div class="panel-body">
+        <div class="card-body">
           <%= render template: 'news/show' %>
         </div>
       </div>
 
     <%= render 'events/next_meetup' %>
 
-    <div class="panel panel-warning past-meetups">
-      <div class="panel-heading">
-        <h3 class="panel-title">Past Meetups</h3>
+    <div class="card border border-dark past-meetups">
+      <div class="card-header bg-dark text-white">
+        Past Meetups
       </div>
-      <div class="panel-body">
+      <div class="card-body">
         <%= render 'events/past_meetups' %>
       </div>
     </div>

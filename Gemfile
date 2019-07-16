@@ -9,7 +9,7 @@ gem 'pg'
 # Use Puma as the app server
 gem 'puma'
 # Sass framework
-gem 'bootstrap-sass'
+gem 'bootstrap'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,7 +31,7 @@ gem 'devise'
 gem 'meetup_client_rails', '~> 0.1'
 
 # Easy file attachment management for ActiveRecord
-gem 'paperclip', '~> 6'
+gem 'paperclip'
 # Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup.
 gem 'simple_form'
 # growl notifications
