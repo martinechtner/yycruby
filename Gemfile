@@ -9,7 +9,7 @@ gem 'pg'
 # Use Puma as the app server
 gem 'puma'
 # Sass framework
-gem 'bootstrap-sass'
+gem 'bootstrap'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
