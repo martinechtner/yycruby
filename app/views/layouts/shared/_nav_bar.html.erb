@@ -28,10 +28,10 @@
         </li>
       <% end %>
       <li class="nav-item">
-        <%= link_to 'Meetup Group', "http://www.meetup.com/#{MEETUP_GROUP_SLUG}", class: 'nav-link' %>
+        <%= link_to 'Meetup Group', "http://www.meetup.com/#{MEETUP_GROUP_SLUG}", class: 'nav-link', target: :_blank %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Twitter', 'https://twitter.com/yyc_ruby', class: 'nav-link twitter-link' %>
+        <%= link_to(fa_icon('twitter', text: 'Twitter'), 'https://twitter.com/yyc_ruby', class: 'nav-link twitter-link', target: :_blank) %>
       </li>
     </ul>
 
