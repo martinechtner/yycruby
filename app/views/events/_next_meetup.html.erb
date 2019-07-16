@@ -1,14 +1,14 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Next Meetup</h3>
+<div class="card border border-danger">
+  <div class="card-header bg-danger text-white">
+    Next Meetup
   </div>
-  <div class="panel-body">
+  <div class="card-body">
     <% if @next_meetup.present? %>
-      <h2><%= @next_meetup.name %></h2>
-      <h4><%= l convert_to_datetime(@next_meetup.time) %></h4>
+      <h4><%= @next_meetup.name %></h4>
+      <p><%= l convert_to_datetime(@next_meetup.time) %></p>
       <%= @next_meetup.description.html_safe %>
     <% else %>
-      <h2>No upcoming meetup.</h2>
+      <p>No upcoming meetup.</p>
     <% end %>
   </div>
 </div>

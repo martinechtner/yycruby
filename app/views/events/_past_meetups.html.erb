@@ -1,5 +1,9 @@
 <ul class="past-meetups">
   <% @past_meetups.each do |meetup| %>
-    <li><%= l convert_to_date(meetup.time) %> >> <%= link_to meetup.name, event_path(meetup.id) %></li>
+    <li>
+      <%= l convert_to_date(meetup.time) %> >> <%= link_to(truncate(meetup.name, length: 50),
+                                                           event_path(meetup.id),
+                                                           title: meetup.name) %>
+    </li>
   <% end %>
 </ul>
